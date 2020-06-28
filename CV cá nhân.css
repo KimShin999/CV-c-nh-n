@@ -1,0 +1,17 @@
+#body{
+    width: 960px;
+    margin: 0 auto;
+    font-family: Arial, SansSerif;
+    font-size: 16px;
+    color: antiquewhite;
+}
+
+#header{
+    background-color: aquamarine;
+    padding: 10px 25px;
+}
+#thongtincanhan{
+    background-color: bisque;
+    floot: left;
+
+
