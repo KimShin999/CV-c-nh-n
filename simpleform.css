@@ -1,0 +1,8 @@
+div {
+    width: 300px;
+}
+#box{
+    background-color: white;
+    border: 2px outset skyblue;
+    padding: 10px;
+}
