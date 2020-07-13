@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bài tập tính chỉ số cân nặng của cơ thể</title>
+</head>
+<body>
+    <h1>Kiểm tra chỉ số cân nặng BMI</h1>
+    Nhập vào chiều cao: <input id="chieucaoo" type="text">
+    <br>
+    Nhập vào cân nặng: <input id="cannang" type="text">
+    <button type="button" onclick="kiemtracannang()" >kiểm tra độ béo</button>
+    <script>
+        function kiemtracannang() {
+            var a = parseFloat(document.getElementById("chieucaoo").value);
+            var b = parseFloat(document.getElementById("cannang").value);
+            var BMI = b / (a * a);
+            if (BMI < 18.5) {
+                alert('gầy vãi');
+            }else if (BMI < 25) {
+                    alert('bình thường');
+                }else if (BMI < 30) {
+                    alert('béo vãi nồi');
+                    }else{
+                        alert('bạn là người ngoài hành tinh');
+            }
+        }
+
+    </script>
+
+</body>
+</html>

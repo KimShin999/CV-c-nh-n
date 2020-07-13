@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hàm kiểm tra số nguyên tố</title>
+</head>
+<body>
+    <script>
+        var number = parseInt(prompt("nhập vào số:"));
+        function checkPrime() {
+            if( number = 2){
+                return true;
+            }else for (let i = 3; 1< i < number ; i++){
+                if (number % i == 0){
+                    return false;
+                    break;
+                }return true;
+            }
+        }
+        if (checkPrime(number)){
+            alert("đây là số nguyên tố")
+        }else alert("đây không phải số nguyên tố")
+    </script>
+</body>
+</html>

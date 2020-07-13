@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>thực hành luyện tập cấu trúc switch - case 2</title>
+</head>
+<body>
+    nhập số cần kiểm tra
+    <input id="nhapso">
+    <button type="button" onclick="sosanh()">kết quả</button>
+<script>
+    function sosanh(){
+        let AAA = document.getElementById("nhapso").value;
+        switch (AAA > 0){
+            case true:
+                alert(1);
+                break;
+            case false:
+                switch (AAA < 0){
+                    case true:
+                        alert(-1);
+                        break;
+                    case false:
+                        alert(0);
+                }
+        }}
+</script>
+</body>
+</html>

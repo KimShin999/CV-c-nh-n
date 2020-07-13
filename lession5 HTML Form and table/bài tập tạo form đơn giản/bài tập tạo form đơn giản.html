@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tạo form đơn giản</title>
+    <link rel="stylesheet" href="bài%20tập%20tạo%20form%20đơn%20giản.css20giản.css">
+</head>
+<body>
+    <form method="post" action="" id="form">
+        <div class="header">Sở thích của bạn</div>
+        <div>
+            <label for="name"> Họ và tên :</label>
+            <input type="text" name="name">
+        </div>
+        <div>
+            <label for="name"> Email :</label>
+            <input type="text" name="email">
+
+            <select name="email">
+                <option value="gmail">@gmail.com</option>
+                <option value="gmailvn">@gmail.com.vn</option>
+
+            </select>
+        </div>
+        <div class="la">
+            <label name="sothich"> sở thích :</label>
+            <input type="checkbox" name="sothich"> thể thao
+            <input type="checkbox" name="sothich"> âm nhạc
+            <input type="checkbox" name="sothich"> đọc sách <br>
+            <input type="checkbox" name="sothich"> lướt web
+            <input type="checkbox" name="sothich"> chơi game
+            <input type="checkbox" name="sothich"> điện ảnh <br>
+            <input type="checkbox" name="sothich"> du lịch
+        </div>
+        <div>
+            <input type="submit" value="gửi thông tin" id="button"/>
+            <input type="reset" value="nhập lại" id="button"/>
+        </div>
+    </form>
+</body>
+</html>

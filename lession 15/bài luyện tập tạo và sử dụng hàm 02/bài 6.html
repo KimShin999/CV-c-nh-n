@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>kiểm tra số nguyên dương</title>
+</head>
+<body>
+    <script>
+        let number = parseFloat(prompt("nhập vào số bất kì"));
+        function checkinteger() {
+            if (number > 0 && number % 1 === 0){
+                return true;
+            }else false;
+        }
+        if (checkinteger(number)){
+            alert("số vừa nhập là số nguyên dương");
+        }else alert("số vừa nhập không phải số nguyên dương");
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <img onclick="changeImage('img1')" id="img1" style="margin-left: 78px;"/><br/>
+    <img onclick="changeImage('img2')" id="img2" style="margin-left: 50px;"/><br/>
+    <img onclick="changeImage('img3')" id="img3" style="margin-left: 60px;"/><br/>
+    <img onclick="changeImage('img4')" id="img4" /><br/>
+    <img onclick="changeImage('img5')" id="img5" />
+</div>
+</body>
+</html>
+​
+<script>
+    function changeImage(index) {
+        var rand = Math.floor(Math.random() * (6 - 1)) + 1;
+        var imgName = "images/img" + rand + ".jpg";
+        document.getElementById(index).src = imgName;
+    }
+    function setImage() {
+    ​
+        var rand = Math.floor(Math.random() * (6 - 1)) + 1;
+        var imgName = "images/img" + rand + ".jpg";
+        document.getElementById("img1").src = imgName; 
+​
+        rand = Math.floor(Math.random() * (6 - 1)) + 1;
+        imgName = "images/img" + rand + ".jpg";
+        document.getElementById("img2").src = imgName;
+​
+        rand = Math.floor(Math.random() * (6 - 1)) + 1;
+        imgName = "images/img" + rand + ".jpg";
+        document.getElementById("img3").src = imgName;
+​
+        rand = Math.floor(Math.random() * (6 - 1)) + 1;
+        imgName = "images/img" + rand + ".jpg";
+        document.getElementById("img4").src = imgName;
+​
+        rand = Math.floor(Math.random() * (6 - 1)) + 1;
+        imgName = "images/img" + rand + ".jpg";
+        document.getElementById("img5").src = imgName;
+    }
+    setImage();
+</script>
+
+</body>
+</html>

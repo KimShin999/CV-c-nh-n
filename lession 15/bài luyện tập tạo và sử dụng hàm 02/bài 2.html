@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>viết hàm tính diện tích, hàm tính chu vi hình tròn</title>
+</head>
+<body>
+    <script>
+        let number = prompt("nhập bán kính hình tròn:")
+        let arrcicle = []
+        function cicle() {
+            let Scicle = number*number*3.14
+            let Pcicle = number*2*3.14
+            arrcicle.push(Scicle);
+            arrcicle.push(Pcicle)
+            return arrcicle;
+        }
+        document.write("diện tích và chu vi hình tròn có bán kính bằng" + " " + number + " " + "lần lượt là" + " " +cicle(number))
+    </script>
+</body>
+</html>

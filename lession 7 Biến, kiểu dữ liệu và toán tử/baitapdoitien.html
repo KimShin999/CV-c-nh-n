@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ung dung chuyen doi tien te (retodo1)</title>
+</head>
+<body>
+nhap so tien <input type="text" id="nhapsotien">
+<br><br>
+<select id="luachon1">
+    <option value="2">dollars</option>
+    <option value="1">vnd</option>
+</select> chuyen sang
+<select id="luachon2">
+    <option value="1">vnd</option>
+    <option value="2">dollars</option>
+</select>
+<br><br>
+<button type="button" onclick="doitien()">chuyen doi</button>
+<script>
+    function doitien() {
+        var nhap = document.getElementById('nhapsotien').value;
+        var lchon1 = document.getElementById('luachon1').value;
+        var lchon2 = document.getElementById('luachon2').value;
+        ketqua=nhap;
+        if (lchon1 === lchon2){
+            ketqua=nhap;
+        }else
+        if (lchon1 ==2 && lchon2 == 1){
+            ketqua = nhap * 23000;
+        }else {
+            ketqua = nhap / 23000;
+        } alert("ket qua là: " +ketqua);
+    }
+</script>
+</body>
+</html>

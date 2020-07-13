@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tỉnh tổng 30 số đầu tiên chia hết cho 7 trong các số tự nhiên</title>
+</head>
+<body>
+    tính tổng k số đầu tiên chia hết cho x trong các số tự nhiên
+    <script>
+        var k = parseInt(prompt("tính tổng k số đầu tiên chia hết cho x trong các số tự nhiên. nhập k = "))
+        var x = parseInt(prompt("nhập vào số x."))
+        var z = 0
+        var tongsooo = 0
+        for (count = 0; count <= k; ){
+            if (z % x == 0){
+                count++
+                tongsooo = tongsooo + z
+                z++
+            }else z++
+        }document.write("tổng" + tongsooo)
+    </script>
+
+</body>
+</html>

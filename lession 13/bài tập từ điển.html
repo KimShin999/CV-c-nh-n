@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bài tập từ điểm</title>
+</head>
+<body>
+    <form>
+        <input id="nhap">
+        <input id="xuat" disabled>
+        <div id="nuttt"><button id="nut" type="button" onclick="tratu()" > tra từ</button></div>
+    </form>
+    <script>
+        var vietnamese = ["xin chào", "ăn tối", "ăn trưa", "ăn sáng"];
+        var English = ["hello", "diner", "lunch", "breakfash"];
+        function tratu() {
+            for ( i = 0; i < vietnamese.length; i++){
+                if (document.getElementById("nhap").value === vietnamese[i]){
+                    document.getElementById("xuat").value = English[i]
+                    break;
+                }else window.location="https://translate.google.com.vn/#view=home&op=translate&sl=auto&tl=vi&text=%E1%BA%A5n%20v%C3%A0o%20%C4%91%C3%A2y%20m%C3%A0%20tra";
+            }
+        }
+    </script>
+</body>
+</html>

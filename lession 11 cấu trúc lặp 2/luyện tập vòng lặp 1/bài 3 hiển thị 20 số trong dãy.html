@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        var k =parseInt(prompt("cần in ra " + k + "số fibonacci"));
+        var st1 = 0 ;
+        var st2 = 1 ;
+        var st3 ;
+        var count = 0;
+        for (; count < k;count ++ ){
+            st3 = st1 +st2
+            st1 = st2
+            st2 = st3
+            document.write("số"+ " " + st3 + "<br>");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bài tập luyện tập cấu trúc điều kiện 1</title>
+</head>
+<body>
+    <script>
+        //bai1: kiểm tra số a chia hết số b không
+        /*var soa = parseInt(prompt('nhập vào số a'));
+        var sob = parseInt(prompt('nhập vào số b'));
+        var sodu = soa % sob
+        if (sodu == 0) {
+            document.write('số a chia hết cho b')}
+        else
+            document.write('số a không chia hết cho b')*/
+
+        /*bài 2: kiểm tra tuổi vào lớp 10
+        var tuoihocsinh = parseFloat(prompt('Kiểm tra điều kiện tuổi vào lớp 10.  nhập số tuổi'))
+        if (tuoihocsinh < 16){
+            document.write('không đủ điều kiện học lớp 10')}
+        else document.write('đủ điều kiện lên lớp 10')*/
+
+        /*bài 3: Kiểm tra số lớn 0 nhỏ hơn 0
+        var aaaa = parseFloat(prompt('nhập số a'))
+        if (aaaa > 0) {
+            alert('số a lớn hơn 0');
+        }else if ( aaaa < 0 ) {
+            alert('số a nhỏ hơn 0');
+        }else alert('số a bằng 0') */
+    </script>
+
+        bài 5: xếp hạng học lực của học sinh dựa trên điểm kiểm tra, điểm giữa kì, điểm cuối kì
+        <br>
+        nhập vào điểm giữa kì: <input type="number" id="giuaki"> <br>
+        nhập vào điểm cuối kì : <input type="number" id="cuoiki"> <br>
+        <button type="button" onclick="kiemtraaa()">Kiểm tra</button> xếp hạng học lực
+    <script>
+            function kiemtraaa() {
+                var giuki = parseFloat(document.getElementById(giuki)).value;
+                var cuoiki = parseFloat(document.getElementById(cuoiki)).value;
+                var diemtbnam = (giuki + cuoiki * 2)/3 ;
+                if ( diemtbnam > 7.9 ) {
+                    alert('xếp loại học lực giỏi');
+                }else if (diemtbnam >6.4){
+                    alert('xếp loại học lực khá');
+                }else if ( diemtbnam > 5 ){
+                    alert('học lực trung bình');
+                }else alert('bạn ngu vl')
+
+            }
+    </script>
+    <script>
+        bài 4 : nhập 3 số nguyên và tìm giá trị lớn nhất của ba số nguyên đó
+        /*var soo1 = parseInt(prompt('nhập vào số a'))
+        var soo2 = parseInt(prompt('nhap vao so b'))
+        var soo3 = parseInt(prompt('nhap vao so c'))
+        var max = soo1
+        if (max < soo2){
+            max = soo2
+        }else if (max < soo3){
+            max = soo3
+        } else max = max
+        alert(max)*/
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>thực hành thao tác mảng</title>
+</head>
+<body>
+    <form id="banggg">
+        thêm vào vị trí bất kì: vị trí thứ: <input id="vitri" type="text">
+        số <input id="themso" type="text"><button type="button" onclick="thembk()">thêm vào</button>
+        <br>
+        hiển thị mảng: <input id="hienthi" type="text" disabled>
+        <button type="button" onclick="display()">display</button>
+        <button type="reset" onclick="resett()">reset</button> <br>
+    </form>
+    <script>
+        var sdt = ["0","3","3","6","8","7","0","2","8","2"];
+            sdt[3]="4";
+        function thembk() {
+            var x = document.getElementById("vitri").value;
+            var bienbk= document.getElementById("themso").value;
+            sdt.splice(x,0,bienbk);
+            }
+        function azz(sdt) {
+            var luuham = " ";
+            for (i = 0; i < sdt.length ; i ++){
+                luuham += sdt[i] + "  "
+            }return luuham
+        }
+        function display() {
+            azz(sdt)
+            document.getElementById("hienthi").value = azz(sdt) ;
+        }
+        function resett() {
+            document.getElementById("banggg").reset();
+        }
+    </script>
+
+</body>
+</html>

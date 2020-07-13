@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>game đoán số</title>
+</head>
+<body>
+     <script>
+         var min = parseInt(prompt("nhập vào số nhỏ nhất:"))
+         var max = parseInt(prompt("nhập vào số lớn nhất:"))
+         var random = Math.floor(Math.random()*(max-min) + min);
+         var luotchoi = 0
+         while ( luotchoi < 3){
+             var doanso = parseInt(prompt("nhập vào số bạn muốn đoán"))
+             if (random == doanso){
+                 alert("chúc mừng bạn đã đoán trúng")
+                 break;}
+             if (doanso < random ){
+                 alert("bạn cần đoán tăng lên")}
+             if ( doanso > random){
+                 alert("bạn cần đoán giảm xuống")}
+             luotchoi ++
+             if (luotchoi == 3){
+                 alert("bạn đen vãi nồi. phải là" + " " + random + " " + "cơ")
+             }
+         }
+     </script>
+
+    <script>
+    </script>
+</body>
+</html>

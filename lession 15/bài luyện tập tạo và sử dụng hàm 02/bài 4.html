@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>kiểm tra kí tự nhập vào</title>
+</head>
+<body>
+    <script>
+        let nhapvao = prompt("nhập vào 1 kí tự");
+        function identificationNumber() {
+            if (nhapvao % 1 ===0){
+                return true;
+            }else return false;
+        }
+        if (identificationNumber(nhapvao)){
+            alert("đây là 1 số");
+        }else alert("đây là 1 kí tự");
+    </script>
+
+</body>
+</html>

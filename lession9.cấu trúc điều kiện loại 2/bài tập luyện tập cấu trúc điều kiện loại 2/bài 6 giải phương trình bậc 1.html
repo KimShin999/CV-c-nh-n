@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    Nhập vào phương trình dạng ax + b = 0<br>
+    nhập vào hệ số a: <input id="soa" type="number"><br>
+    nhập vào hệ số b: <input id="sob" type="number"><br>
+    giá trị x : <input id="sox" disabled>
+    <button type="button" onclick="thuchienpheptinh()">tính toán</button>
+    <script>
+        function thuchienpheptinh() {
+            var a = parseFloat( document.getElementById("soa").value);
+            var b = parseFloat(document.getElementById("sob").value);
+            var x = - b / a ;
+            document.getElementById("sox").value= x ;
+        }
+    </script>
+</body>
+</html>

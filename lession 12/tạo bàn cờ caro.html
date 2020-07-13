@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .tblTicToe {
+            margin: 150px 0px 0px 500px;
+        }
+    </style>
+</head>
+<body>
+</body>
+</html>
+<script>
+    /*
+    //Nhập chiều dài các cạnh
+    var LongTable = 20;
+    //parseInt(prompt('Hãy nhập vào chiều dài cạnh bàn cờ:'));​
+    //Khai báo mảng TableOfValue
+    var TableOfValue = new Array();
+    for (let x = 0; x < 20; x++) {
+        TableOfValue[x]=new Array();
+        for ( let y=0; y<20; y++ ) {
+            TableOfValue[x][y] = "";
+        }
+    }
+    //Tạo bảng button "X" || "O"
+    var sout = "<table class='tblTicToe' border='1'  cellspacing='1' cellpadding='1'>";
+    var i = j = 0;
+    while (i <= LongTable -1) {
+        sout = sout + "<tr>";
+        while (j <= LongTable -1) {
+            let IdButton = "localtion" + i + "." + j;
+            let ValueButton = i + "," + j;
+            sout = sout + "<td align='center'>" + "<button value='" + ValueButton + "' id='" + IdButton + "'" + "style='border: 0px; background-color: white' onclick='clicky()'>&nbsp&nbsp</button>" + "</td>";
+            j++;
+        }
+        sout = sout + "</tr>";
+        j = 0;
+        i++;
+    }
+    sout = sout + "</table>";
+    document.write(sout);
+    //Hiển thị và lưu giá trị ô cờ
+    var CheckPoint = 0;
+    function clicky() {
+        if (CheckPoint == 0){
+            document.getElementById(event.srcElement.id).innerHTML = 'X';
+            CheckPoint = 1;
+            InsertValue(document.getElementById(event.srcElement.id).value, 'X');
+        } else if (CheckPoint == 1){
+            document.getElementById(event.srcElement.id).innerHTML = 'O';
+            CheckPoint = 2;
+            InsertValue(document.getElementById(event.srcElement.id).value, 'O');
+        } else if (CheckPoint == 2){
+            document.getElementById(event.srcElement.id).innerHTML = '&nbsp&nbsp'; //khoảng trắng
+            CheckPoint = 0;
+            InsertValue(document.getElementById(event.srcElement.id).value, 'check');
+        }
+    }
+    //Lấy vị trí và giá trị của ô cờ lưu vào TableOfValue
+    function InsertValue(LocaltionValue, TextValue) {
+        let memo = LocaltionValue.split(",");
+        let z = parseInt(memo[0]);
+        let y = parseInt(memo[1]);
+        TableOfValue[z][y] = TextValue;
+        CheckPrize(z, y, TextValue);
+    }
+    //Kiểm tra 5 ô hàng ngang từ vị trí [z,y]
+    function CheckPrize(z, y, TextValue) {
+        CheckColum(z, y, TextValue);
+        CheckRow(z, y, TextValue);
+        CheckDiagonalLeft(z, y, TextValue);
+        CheckDiagonalRight(z, y, TextValue);
+    }
+    //Kiểm tra 5 ô hàng dọc từ vị trí [z,y]
+    function CheckColum(z, y, TextValue) {
+        let x = CheckOriginOfColum(z, y, TextValue);
+        let win = 1;
+        if (TextValue != "check"){
+            while (x+1<LongTable && TableOfValue[x+1][y] == TextValue){
+                win = win + 1;
+                x = x + 1;
+            }
+            if (win >= 5){
+                alert("Chúc mừng người chơi " + TextValue + " đã thắng");
+            }
+        }
+    }
+    //Kiểm tra 5 ô hàng ngang từ vị trí [z,y]
+    function CheckRow(z, y, TextValue) {
+        let x = CheckOriginOfRow(z, y, TextValue);
+        let win = 1;
+        if (TextValue != "check"){
+            while (TableOfValue[z][x+1] == TextValue && x+1 <LongTable){
+                win = win + 1;
+                x = x + 1;
+            }
+            if (win >= 5){
+                alert("Chúc mừng người chơi " + TextValue + " đã thắng");
+            }
+        }
+    }
+    //Kiểm tra 5 ô hàng chéo từ vị trí [z,y] sang trái
+    function CheckDiagonalLeft(z, y, TextValue) {
+        let MemoLocaltion = CheckOriginOfDiagonalLeft(z, y, TextValue);
+        let a = MemoLocaltion[0];
+        let b = MemoLocaltion[1];
+        let win = 1;
+        if (TextValue != "check") {
+            while (a+1<LongTable && b+1<LongTable && TableOfValue[a + 1][b + 1] == TextValue) {
+                win = win + 1;
+                a = a + 1;
+                b = b + 1;
+            }
+            if (win >= 5) {
+                alert("Chúc mừng người chơi " + TextValue + " đã thắng");
+            }
+        }
+    }
+    //Kiểm tra 5 ô hàng chéo từ vị trí [z,y] sang phải
+    function CheckDiagonalRight(z, y, TextValue) {
+        let MemoLocaltion = CheckOriginOfDiagonalRight(z, y, TextValue);
+        let a = MemoLocaltion[0];
+        let b = MemoLocaltion[1];
+        let win = 1;
+        if (TextValue != "check") {
+            while (a>0 && b<LongTable-1 && TableOfValue[a - 1][b + 1] == TextValue) {
+                win = win + 1;
+                a = a - 1;
+                b = b + 1;
+            }
+            if (win >= 5) {
+                alert("Chúc mừng người chơi " + TextValue + " đã thắng");
+            }
+        }
+    }
+    //Kiểm tra gốc của hàng ngang tính từ vị trí [z,y]
+    function CheckOriginOfRow(z, y, TextValue) {
+        while (y>0 && TableOfValue[z][y-1] == TextValue){
+            y = y - 1;
+        }
+        return y;
+    }
+    //Kiểm tra gốc hàng dọc tính từ vị trí [z,y]
+    function CheckOriginOfColum(z, y, TextValue) {
+        while (z>0 && TableOfValue[z-1][y] == TextValue){
+            z = z - 1;
+        }
+        return z;
+    }
+    //Kiểm tra gốc hàng chéo hướng sang trái tính từ vị trí [z,y]
+    function CheckOriginOfDiagonalLeft(z, y, TextValue){
+        let MemoLocaltion = new Array();
+        while (y>0 && z>0 && TableOfValue[z-1][y-1] == TextValue){
+            y = y - 1;
+            z = z - 1;
+        }
+        MemoLocaltion[0] = z;
+        MemoLocaltion[1] = y;
+        return MemoLocaltion;
+    }
+    //Kiểm tra gốc hàng chéo hướng sang trái tính từ vị trí [z,y]
+    function CheckOriginOfDiagonalRight(z, y, TextValue){
+        let MemoLocaltion = new Array();
+        while (y>0 && z>0 && TableOfValue[z+1][y-1] == TextValue){
+            z = z + 1;
+            y = y - 1;
+        }
+        MemoLocaltion[0] = z;
+        MemoLocaltion[1] = y;
+        return MemoLocaltion;
+    }*/
+
+</script>
+</body>
+</html>

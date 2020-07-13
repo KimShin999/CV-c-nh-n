@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tính tổng</title>
+</head>
+<body>
+    tính tổng của n số đầu tiên trong fibonacci<br>
+    <script>
+        var k =parseInt(prompt("tỉnh tổng n số đầu tiên trong hàm fibonacci, nhập vào k"));
+        var st1 = 0 ;
+        var st2 = 1 ;
+        var st3 ;
+        var tongso = st1 +st2;
+        var count = 0;
+        for (; count < k;count ++ ){
+            st3 = st1 +st2
+            tongso = tongso + st3
+            st1 = st2
+            st2 = st3
+            document.write("số"+ " " + st3 + "<br>");
+        }
+        document.write("tổng" +" "+ k + " " + "đầu tiên trong hàm fibonacci là" + " " + tongso)
+    </script>
+
+</body>
+</html>

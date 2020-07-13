@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        // tạo hàm nhập vào 2 tham số. nếu giá trị của số thứ nhất lớn hơn số thứ 2, thì thông báo cho người dùng. nếu giá trị của tham số thứ nhất nhỏ hơn hoặc bằng số thứ hai thì trả về tổng của 2 tham số
+        let sothu1 = parseInt(prompt("nhập vào số thứ nhất:"));
+        let sothu2 = parseInt(prompt("nhập vào số thứ hai:"));
+        function sosanh() {
+            if (sothu1 > sothu2) {
+                return false
+            }else {
+                let total = sothu1 + sothu2;
+                return total
+            }
+        }
+        if (sosanh()){
+            alert(sosanh(sothu1, sothu2))
+        }else alert("số thứ nhất lớn hơn số thứ hai")
+    </script>
+</body>
+</html>

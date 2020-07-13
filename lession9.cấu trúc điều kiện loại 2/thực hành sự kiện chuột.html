@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form>
+        <img id="tau" src="../ảnh%20&%20video/pngtree-spaceship-rocket-cartoon-hand-painted-png-image_369216.jpg" height="125"
+             width="auto" align="right"/>
+        <br>
+        <input type="button" value="lếu lều" onclick="benphai()"/>
+    </form>
+    <script>
+        var teo = null
+        teo = document.getElementById('tau');
+        function shit() {
+            teo = document.getElementById('tau');
+            teo.style.position = 'relative';
+            teo.style.right = '0px';
+        }
+        function benphai() {
+            teo.style.right = parseInt(teo.style.right) +10 + 'px';
+        }
+        window.onload = shit()
+    </script>
+
+</body>
+</html>

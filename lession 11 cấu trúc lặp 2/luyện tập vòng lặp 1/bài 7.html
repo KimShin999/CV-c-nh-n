@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>lếu lều</title>
+</head>
+<body>
+    hãy viết 1 chương trình in ra các số từ 1 đến 100. những số chia hết cho 3 thì in "fizz", 5 thì "buzz"<br>
+    Nếu chia hết cho cả 3 và 5 thì hiện "fizzbuzz"
+    <script>
+        var A = parseInt(prompt('nhập vào sô giới hạn'))
+        for (count = 0; count <= A; count++)
+        {
+            if (count % 3 == 0 && count % 5 == 0){
+                document.write("fizzbuzz"+"<br>")
+            }else if (count % 3 ==0 ){
+                document.write("fizz"+"<br>")
+            }else if (count % 5 == 0){
+                document.write("buzz"+"<br>")
+            }else document.write(count + "<br>")
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>viết phương trình nhập vào 2 chuỗi</title>
+</head>
+<body>
+    <script>
+        //viết một phương trình nhập vào 2 chuỗi, sau đó kiểm tra xem hai chuỗi đó có giống nhau k
+        let chuoi1 = prompt(" nhập vào chuỗi 1:");
+        let chuoi2 = prompt(" nhập vào chuỗi 2:");
+        let array1 = [];
+        let array2 = [];
+        array1 = chuoi1.split(" ");
+        array2 = chuoi2.split(" ");
+        check = false;
+        if ( array2.length = array1.length){
+            for ( let i = 0; i < array1.length; i ++){
+                if ( array1[i] === array2[i] ){
+                    check = true;
+                }else { check = false;
+                        break;}
+            }
+        }else check = false;
+        if (check){
+            alert("chuỗi 1 giống chuỗi 2");
+        }else alert("chuỗi 1 khác chuỗi 2");
+    </script>
+</body>
+</html>

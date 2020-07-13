@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>giải phương trình bậc 2 </title>
+</head>
+<body>
+    <form>
+    Nhập vào phương trình dạng ax2 + bx + c = 0<br>
+    Nhập vào số a: <input id="soa" type="number"><br>
+    Nhập vào số b: <input id="sob" type="number"><br>
+    Nhập vào số c: <input id="soc" type="number"><br>
+    Nghiệm thứ nhất x=:<input id="nghiem1" disabled><br>
+    Nghiệm thứ hai x=: <input id="nghiem2" disabled><br>
+    Nghiệm kép x=: <input id="nghiemkep" disabled>
+    <button type="button" id="tinhtoan" onclick="tinhtoann()">tính toán</button>
+    <input type="reset" value="reset">
+    </form>
+    <script>
+        function tinhtoann() {
+            var soa = parseFloat(document.getElementById("soa").value);
+            var sob = parseFloat(document.getElementById("sob").value);
+            var soc = parseFloat(document.getElementById("soc").value);
+            var delta = sob * sob - 4 *soa*soc ;
+            if (delta > 0 ){
+                var nghiem1 = - sob - (Math.sqrt(delta)) / 2 * soa ;
+                var nghiem2 = - sob + (Math.sqrt(delta)) / 2 * soa ;
+                document.getElementById("nghiem1").value= nghiem1;
+                document.getElementById("nghiem2").value= nghiem2;
+            } else  if( delta == 0){
+                var nghiemkep = (-sob)/2*soa;
+                document.getElementById("nghiemkep").value= nghiemkep;
+            } else
+                document.write('Phương trình vô cmn sinh');
+        }
+    </script>
+</body>
+</html>

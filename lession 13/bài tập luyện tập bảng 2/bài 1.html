@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>mảng 2 chiều</title>
+</head>
+<body>
+    <script>
+        //viết phương trình khởi tạo mảng 2 chiều, gồm một bộ các phần tử có sẵn, in ra các phần tử trong mảng.
+       let array1 = [
+           [1, 2 , 3],
+           [4, 5, 6 ],
+           [7, 8, 9 ],
+       ];
+       for (i = 0; i < array1.length; i++){
+           document.write("row" + i + "<br>");
+           for (j = 0; j< array1[i].length; j++){
+               document.write(array1[i][j] + " <br>");
+           }
+       }
+    </script>
+</body>
+</html>

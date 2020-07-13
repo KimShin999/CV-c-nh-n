@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bài tập biến, kiểu dữ liệu và toán tử</title>
+</head>
+<body>
+    <script>
+        let vatly;
+        let hoahoc;
+        let sinhhoc;
+        vatly = prompt("nhập điểm vật lý");
+        hoahoc = prompt("nhập điểm hóa học");
+        sinhhoc = prompt("nhập điểm sinh học");
+        let a = parseFloat(vatly);
+        let b = parseFloat(hoahoc);
+        let c = parseFloat(sinhhoc)
+        let tongdiem = a + b + c;
+        let trungbinh = (tongdiem) / 3;
+        document.write("tổng điểm ba môn:" +tongdiem);
+        document.write("<br>")
+        document.write("trung bình ba môn:" +trungbinh);
+    </script>
+
+</body>
+</html>

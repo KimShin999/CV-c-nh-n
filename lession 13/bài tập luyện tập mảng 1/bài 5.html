@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>chương trình đếm số nguyên âm </title>
+</head>
+<body>
+    <script>
+        //viết chương trình đếm số nguyên âm trong 1 chuỗi
+        let chuoi = prompt('nhập vào 1 dãy số');
+        let array1 = [];
+        array1 = chuoi.split(" ");
+        var count = 0
+        for (let i = 0; i < array1.length; i ++){
+            if ( array1 [i] < 0) {
+                count++;}
+        }document.write("có" + " " + count + " " +" số âm")
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset=utf-8 />
+    <title>JS Bin</title>
+    <style>
+        body {padding-top:50px}
+    </style>
+</head>
+
+<body>
+    <input id="hienthi" type="text">
+    <button onclick="clickk()">click</button>
+    <script>
+        var hamm = [1,2,6,5,4,8,10,31,12,15,19,36,20];
+        function az(hamm) {
+            var luuso = " ";
+            for (i = 0; i <hamm.length; i++){
+                luuso += hamm[i] + " "
+            }return luuso
+        }
+        function clickk() {
+            az(hamm)
+            document.getElementById('hienthi').value =az(hamm);
+        }
+    </script>
+</body>
+
+</html>

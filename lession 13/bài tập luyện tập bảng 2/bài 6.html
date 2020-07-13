@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>thay - bằng _</title>
+</head>
+<body>
+    <script>
+        //viết chương trình nhập vào mảng kí tự, tìm các ký tự (-) thay thế bằng _
+        let chuoi1 = prompt("nhập vào cái gì đó");
+        let array1= [];
+        array1 = chuoi1.split("");
+        let sosanh ="-";
+        let gan = "_";
+        for (let i = 0; i < array1.length; i++){
+            if (array1[i] === sosanh ){
+                array1[i] = gan
+            }}
+            document.write(array1);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let num = window.prompt();
+        let str = num.toString();
+        let result = [str[0]];
+
+        for (let x = 0; x < str.length; x++) {
+            if (str[x] % 2 === 0 && str[x+1] % 2 === 0) {
+                result.push('-'+ str[x+1]);
+            } else {
+                result.push(str[x+1]);
+            }
+        }
+        console.log(result.join(''));
+
+
+
+        // var nhapvao = prompt("nhập vào chữ");
+        // var chuhoa = "ABCDEFGHIKLMNOPQRSTUVWXYZ ";
+        // var chuthuong = "abcdefghiklmnopqrstuvwxyz "
+        // var bientam = [];
+        // for (j = 0 ; j < nhapvao.length; j++){
+        //     for ( i = 0; i < chuhoa.length; i++){
+        //         if (nhapvao[i]===chuhoa[i]){
+        //             bientam.push(chuthuong(i))}
+        //         if (nhapvao[i]===chuthuong[i]){
+        //             bientam.push(chuhoa(i))}
+        //     }}
+        // alert(bientam);
+    </script>
+</body>
+</html>

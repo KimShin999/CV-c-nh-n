@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>đổi chỗ 2 số</title>
+</head>
+<body>
+    <script>
+        let chuoi1 = prompt("nhâp vào 2 số nguyên, cách nhau bằng dấu cách");
+        let arr1 = [];
+        arr1 = chuoi1.split(" ")
+        console.log(arr1)
+       function changeindex2number() {
+           let numberchange = arr1[0]
+           arr1[0] = arr1[1];
+           arr1[1] = numberchange;
+            return arr1
+       }
+       alert("đổi chỗ 2 số thành" + " " + changeindex2number(arr1));
+
+    </script>
+</body>
+</html>

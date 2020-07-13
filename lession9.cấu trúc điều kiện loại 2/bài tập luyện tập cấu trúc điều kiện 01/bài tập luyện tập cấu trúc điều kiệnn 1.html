@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+bài 6: tính hoa hồng nhận được tùy theo doanh số bán hàng
+<table>
+    <tr>
+        <th><button type="button">tên nhân viên</button></th>
+        <th><button type="button">doanh số bán hàng điện tử</button></th>
+        <th><button type="button">phần trăm</button></th>
+        <th><button type="button">hoa hồng điện tử</button></th>
+        <th><button type="button">doanh số bán hàng thực phẩm</button></th>
+        <th><button type="button">phần trăm</button></th>
+        <th><button type="button">hoan hồng thực phẩm</button></th>
+    </tr>
+    <tr>
+        <th><strong>KimShin</strong></th>
+        <th><input type="number" id="tien1"></th>
+        <th><input type="number" id="ptdientu"></th>
+        <th><div id="hoahong1"><input type="number" disabled></div></th>
+        <th><input type="number" id="tien2"></th>
+        <th><input type="number" id="ptthucpham"></th>
+        <th><div id="hoahong2"><input type="number" disabled></div></th>
+    </tr>
+    <tr>
+        <th><strong>Tổng hoa hồng</strong></th>
+        <th colspan="5" ><div id="tonghoahong"><input type="number" disabled></div></th>
+        <th><button type="button" onclick="tinhhoahong()"><strong>Click</strong></button> </th>
+    </tr>
+    <script>
+        function tinhhoahong() {
+        var dientu = parseInt(document.getElementById('tien1').value);
+        var thucpham = parseInt(document.getElementById('tien2').value);
+        var ptdientuu = parseInt(document.getElementById('ptdientu').value);
+        var ptthucphamm = parseInt(document.getElementById('ptthucpham').value);
+        var hoahongdientu = (dientu * ptdientuu)/100 ;
+        var hoahongthucpham = (thucpham * ptthucphamm) /100;
+        var tonghoahong = (hoahongdientu + hoahongthucpham ) ;
+       document.getElementById("hoahong1").innerHTML=hoahongdientu;
+       document.getElementById("hoahong2").innerHTML=hoahongthucpham;
+       document.getElementById("tonghoahong").innerHTML=tonghoahong;
+        }
+    </script>
+</table>
+</body>
+</html>

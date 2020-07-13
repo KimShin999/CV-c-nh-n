@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="ứng dụng quản lý sản phẩm.css">
+</head>
+<body>
+    <h3>Add New Product</h3>
+    <div id="header">
+        <input placeholder="New Product" id="newproduct"> <button type="button" id="addNewProduct" onclick="addProduct()">add</button>
+    </div>
+    <h3>Display All Product</h3>
+    <div id="tableproduct"></div>
+    <script>
+        let cataloProduct = [];
+
+        function painTable(cataloProduct) {
+            let tableProduct = "<table>"
+            tableProduct += "<tr><th colspan='2'>Product Name</th></tr>"
+            for (i = 0; i <cataloProduct.length; i++){
+                tableProduct += "<tr>"
+                for ( j = 1; j <= 3 ; j++){
+                    if ( j = 1){
+                        tableProduct += "<td id='nameProduct'>" + cataloProduct[i] + "</td>"
+                    }
+                    if ( j = 2){
+                        tableProduct += "<td><button onclick='edit("+i+")'>Edit</button><td>"
+                    }
+                    if ( j = 3){
+                        tableProduct += "<td><button onclick='deleteP("+i+")'>delete</button></td>"
+                    }
+                }tableProduct += "</tr>"
+            }
+            tableProduct += "</table>"
+            document.getElementById("tableproduct").innerHTML = tableProduct;
+        }
+        painTable(cataloProduct);
+        function addProduct() {
+            let newProduct = document.getElementById("newproduct").value;
+            cataloProduct.push(newProduct)
+            document.getElementById("newproduct").value="";
+            painTable(cataloProduct)
+        }
+        function edit(masanpham){
+            let newEdit = prompt("bạn muốn sửa sản phẩm" + " " + cataloProduct[masanpham] + " thành:");
+            cataloProduct[masanpham] = newEdit;
+            painTable(cataloProduct);
+        }
+        function deleteP(masanpham) {
+            cataloProduct.splice(masanpham,1)
+            painTable(cataloProduct);
+        }
+    </script>
+</body>
+</html>
