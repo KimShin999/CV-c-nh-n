@@ -2,9 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+    <script>
+        let changeTemperature = function (temperature) {
+            this.temperature = temperature;
+            this.getFahrenheit =function () {
+                return temperature+33.8;
+            }
+            this.getKenvin = function () {
+                return temperature+274.15;
+            }
+        }
+        function display() {
+            let x = new changeTemperature(25);
+            alert(x.getFahrenheit());
+            alert(x.getKenvin());
+        }
+        display();
+    </script>
 </body>
 </html>

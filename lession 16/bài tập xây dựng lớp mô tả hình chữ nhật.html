@@ -2,9 +2,59 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<canvas id="myCanvas" width="1920px" height="1080px" style="border:1px solid #d3d3d3;"></canvas>
+    <script>
+        let Rectangle = function (x ,y ,chieudai , chieurong) {
+            this.x = x;
+            this.y = y;
+            this.lengthA = chieudai;
+            this.lengthB = chieurong;
+
+            this.getAcreage = function () {
+                return lengthA*lengthB;
+            }
+            this.setlengA =function () {
+                return lengthA = chieudai;
+            }
+            this.setlengB = function () {
+                return lengthB = chieurong;
+            }
+        }
+        function getRandomHex(){
+            return Math.floor(Math.random()*255);
+        }
+
+        function getRandomColor(){
+            var red = getRandomHex();
+            var green = getRandomHex();
+            var blue = getRandomHex();
+            return "rgb(" + red + "," + blue + "," + green +")";
+        }
+        function createRectangle() {
+            let ctx = document.getElementById("myCanvas").getContext("2d");
+            let color = getRandomColor();
+            let chieudaiX = Math.random()*150;
+            let chieurongX = Math.random()*100;
+            let x = Math.random()*window.innerWidth;
+            let y = Math.random()*window.innerHeight;
+            let i
+            let rectangle1 = new Rectangle(x,y,chieudaiX,chieurongX);
+            ctx.beginPath();
+            ctx.rect(rectangle1.x, rectangle1.y, rectangle1.lengthA,rectangle1.lengthB)
+            ctx.fillStyle = color;
+            ctx.fill();
+        }
+        function creatMultipleRectangle() {
+            for(i = 0; i < 50; i++)
+                createRectangle();
+
+        }
+        creatMultipleRectangle();
+
+
+    </script>
 </body>
 </html>

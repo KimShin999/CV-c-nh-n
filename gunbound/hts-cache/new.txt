@@ -1,0 +1,5 @@
+date	size'/'remotesize	flags(request:Update,Range state:File response:Modified,Chunked,gZipped)	statuscode	status ('servermsg')	MIME	Etag|Date	URL	localfile	(from URL)
+15:47:22	353/353	---M--	200	added ('OK')	text/html	etag:%228f5bd33fa3a2b98d4d18ba5ae256323b-ssl%22	https://dreamy-neumann-901c6b.netlify.app/	C:/My%20Web%20Sites/gunbound/dreamy-neumann-901c6b.netlify.app/index.html	(from )
+15:47:22	1250/1250	---MCZ	404	error ('Not%20Found')	text/html	etag:1590982629-ssl-df	https://dreamy-neumann-901c6b.netlify.app/robots.txt		(from )
+15:47:22	465/465	---M--	200	added ('OK')	text/css	etag:%22cb566ac09ffa7770cfa7eb9377459e87-ssl%22	https://dreamy-neumann-901c6b.netlify.app/main.css	C:/My%20Web%20Sites/gunbound/dreamy-neumann-901c6b.netlify.app/main.css	(from https://dreamy-neumann-901c6b.netlify.app/)
+15:47:23	7216/7216	---M-Z	200	added ('OK')	application/javascript	etag:%229b19e11ae588a858a02e549a90df149f-ssl-df%22	https://dreamy-neumann-901c6b.netlify.app/main.js	C:/My%20Web%20Sites/gunbound/dreamy-neumann-901c6b.netlify.app/main.js	(from https://dreamy-neumann-901c6b.netlify.app/)

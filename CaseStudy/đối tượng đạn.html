@@ -24,13 +24,6 @@
                 ctx.fill();
             }
 
-            // this.position =function () {
-            //     for (i = 0; i <= this.t(); i++) {
-            //         this.x += this.phuongtrinhX();
-            //         this.y += this.yDown()
-            //     }
-            // }
-
             this.position = function () {
                 this.x += this.dx
                 this.y += - this.dy
@@ -48,7 +41,6 @@
         let bullet = new Bullet(100, 800, 10);
         bullet.creatBullet();
         setInterval(()=>{bullet.move()},20)
-        console.log(this.t())
     </script>
 </body>
 </html>

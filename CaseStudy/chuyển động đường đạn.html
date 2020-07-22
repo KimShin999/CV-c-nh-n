@@ -1,37 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="chuyển động đường đạn.css">
 </head>
 <body>
-    <canvas id = "mygunny" style="border: 2px solid #d3d3d3" ></canvas>
+
+<canvas id = "mygunny" style="border: 2px solid #d3d3d3" ></canvas>
     <script>
         let paincanvas = document.getElementById("mygunny");
         let ctx = paincanvas.getContext("2d");
+        let currentPlayer = 0;
+        let thaydoigoc = function (evt) {
+            switch (evt.keyCode) {
+                case 38:
+                    gocban1.alpha += Math.PI/180;
+                    break;
+
+                case 40:
+                    gocban1.alpha-= Math.PI/180;
+                    break;
+                case 32:
+                    if (currentPlayer ===0){
+                        bullets[currentPlayer] = new bullet(nhanvat1.x,nhanvat1.y,20,gocban1.alpha,40)
+                        bullets[currentPlayer].fire();
+                        currentPlayer = 1;
+                    } else
+                    if (currentPlayer ===1){
+                        bullets[currentPlayer] = new bullet(nhanvat2.x,nhanvat2.y,20,3*Math.PI/4,40);
+                        bullets[currentPlayer].fire();
+                        currentPlayer = 0;
+                    }
+
+
+            }
+        }
+        window.addEventListener("keydown",thaydoigoc)
         paincanvas.width = window.innerWidth;
         paincanvas.height = window.innerHeight;
 
 
-        let bullet = function (x ,y, R, alpha, velocity) {
+        let nhanvat = function (x,y,tenhinhanh, cao,rong) {   //nhân vật-----------------
             this.x = x;
             this.y = y;
+            this.cao = cao;
+            this.rong = rong;
+            this.image = new Image();
+            this.image.src = tenhinhanh;
+            this.creatnhanvat = function () {
+                ctx.drawImage(this.image,this.x,this.y,this.cao,this.rong)
+            }
+        }
+        nhanvat1 = new nhanvat(280,650,"Role1.png",150,150);
+        nhanvat2 = new nhanvat(1850,650,"DungCuHocTap.png",150,150);
+
+        nhanvat1.creatnhanvat();
+        nhanvat2.creatnhanvat();
+
+
+        let gocban = function(x,y,alpha){              //tạo góc bắn--------------------
+            this.x = x+75;
+            this.y = y+75;
+            this.alpha = alpha
+
+            this.xgoc =  this.x+Math.cos(this.alpha)*200;
+            this.ygoc = this.y-Math.sin(this.alpha)*200;
+
+            this.paingocban = function(){
+                this.xgoc =  this.x+Math.cos(this.alpha)*200;
+                this.ygoc = this.y-Math.sin(this.alpha)*200;
+            ctx.moveTo(this.x,this.y);         //vẽ đường căn góc
+            ctx.lineTo(this.xgoc,this.ygoc);    //vẽ đường căn góc
+            ctx.stroke()                        //vẽ đường căn góc
+            }
+        }
+
+
+        gocban1 = new gocban(nhanvat1.x,nhanvat1.y,Math.PI/4)
+        gocban2 = new gocban(nhanvat2.x,nhanvat2.y,3*Math.PI/4);
+
+
+        let bullet = function (x ,y, R, alpha, velocity) {         //Đạn----------------------
+            this.x = x+75;
+            this.y = y+75;
             this.R = R;
             this.alpha = alpha;
             this.velocity = velocity; //lực bắn
-            this.Vx = this.velocity*Math.cos(this.alpha);
-            this.Vy = - this.velocity*Math.sin(this.alpha);
+            this.Vx = 0;
+            this.Vy = 0;
+            this.isFire = false;
 
+            this.image= new Image();
+            this.image.src = "BMR.png";
+            this.fire = function () {
+                this.Vx = this.velocity*Math.cos(this.alpha);
+                this.Vy = - this.velocity*Math.sin(this.alpha);
+                this.isFire = true;
+            }
             this.creatBullet = function () {
-                ctx.clearRect(0, 0, innerWidth, innerHeight);
                 ctx.beginPath();
-                ctx.arc(this.x, this.y, this.R, 0, 2 * Math.PI);
-                ctx.stroke();
-                ctx.fill();
+                ctx.drawImage(this.image,this.x-100,this.y,100,100)
                 ctx.closePath();
             }
 
             this.position = function () {
+                if (!this.isFire) return;
                 this.x += this.Vx
                 this.y += this.Vy;
                 this.Vy += 1
@@ -41,15 +116,31 @@
                 this.position();
                 this.creatBullet();
             }
-        }
 
-        let bullet1 = new bullet(100,1000,20,20,40)
+            this.setPosition = function () {
+
+            }
+
+
+        }
+        let bullets = [];
+        bullets[0] = new bullet(nhanvat1.x,nhanvat1.y,20,gocban1.alpha,40);
+        bullets[1] = new bullet(nhanvat2.x,nhanvat2.y,20,-Math.PI/4,40)
+
+
+
 
         function update() {
-        bullet1.move()
+            ctx.clearRect(0, 0,window.innerWidth, window.innerHeight);
+            bullets[0].move()
+            bullets[1].move();
+            nhanvat1.creatnhanvat();
+            nhanvat2.creatnhanvat();
+            gocban1.paingocban();
+            gocban2.paingocban();
         }
         setInterval(update,35);
 
-    </script>
+</script>
 </body>
 </html>

@@ -17,20 +17,13 @@
 
         function painTable(cataloProduct) {
             let tableProduct = "<table>"
-            tableProduct += "<tr><th colspan='2'>Product Name</th></tr>"
+            tableProduct += "<tr><th colspan='3'>Product Name</th><th>"+ cataloProduct.length + " " +"Product"+"</th></tr>"
             for (i = 0; i <cataloProduct.length; i++){
                 tableProduct += "<tr>"
-                for ( j = 1; j <= 3 ; j++){
-                    if ( j = 1){
-                        tableProduct += "<td id='nameProduct'>" + cataloProduct[i] + "</td>"
-                    }
-                    if ( j = 2){
-                        tableProduct += "<td><button onclick='edit("+i+")'>Edit</button><td>"
-                    }
-                    if ( j = 3){
-                        tableProduct += "<td><button onclick='deleteP("+i+")'>delete</button></td>"
-                    }
-                }tableProduct += "</tr>"
+                tableProduct += "<td id='nameProduct'>" + cataloProduct[i] + "</td>"
+                tableProduct += "<td><button onclick='edit("+i+")'>Edit</button><td>"
+                tableProduct += "<td><button onclick='deleteP("+i+")'>delete</button></td>"
+                tableProduct += "</tr>"
             }
             tableProduct += "</table>"
             document.getElementById("tableproduct").innerHTML = tableProduct;
@@ -40,7 +33,7 @@
             let newProduct = document.getElementById("newproduct").value;
             cataloProduct.push(newProduct)
             document.getElementById("newproduct").value="";
-            painTable(cataloProduct)
+            painTable(cataloProduct);
         }
         function edit(masanpham){
             let newEdit = prompt("bạn muốn sửa sản phẩm" + " " + cataloProduct[masanpham] + " thành:");
@@ -48,7 +41,7 @@
             painTable(cataloProduct);
         }
         function deleteP(masanpham) {
-            cataloProduct.splice(masanpham,1)
+            cataloProduct.splice(masanpham,1);
             painTable(cataloProduct);
         }
     </script>

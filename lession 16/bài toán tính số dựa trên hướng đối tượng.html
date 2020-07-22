@@ -2,9 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+    <script>
+        function caculator(number1,number2) {
+            this.A = number1;
+            this.B = number2;
+            this.Cong = function () {return this.A + this.B;}
+            this.Tru = function () {return this.A-this.B;}
+            this.Nhan = function () {return this.A*this.B;}
+            this.Chia = function () {return this.A/this.B;}
+
+        }
+        let PT = new caculator(20,15);
+        let ketqua = PT.Nhan();
+        alert(ketqua)
+    </script>
 </body>
 </html>

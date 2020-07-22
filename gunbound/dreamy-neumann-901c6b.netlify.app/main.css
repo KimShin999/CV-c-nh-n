@@ -1,0 +1,31 @@
+body {
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+#mycanvas {
+    width: window . innerWidth;
+    height: window . innerHeight;
+    padding: 0;
+    margin: 0;
+    border: 1px solid black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#score_pos {
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    color: black;
+}
+
+#life_pos {
+    position: absolute;
+    top: 5%;
+    right: 10%;
+    color: red;
+}

@@ -2,9 +2,123 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+    <table border="2px">
+        <tr>
+            <td>
+                Bphone
+                    <select id="stattusBphone">
+                        <option>tắt</option>
+                        <option>bật</option>
+                        <option>máy pay</option>
+                    </select>
+                Sóng:<span id="waveBphone">-</span>
+                pin <span id="bateryBphone">100%</span>
+
+            </td>
+            <td>
+                Vsmart
+                    <select id="stattusVsmart">
+                        <option>tắt</option>
+                        <option>bật</option>
+                        <option>máy pay</option>
+                    </select>
+                Sóng:<span id="waveVsmart">-</span>
+                Pin <span id="bateryVsmart">100%</span>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td width="" height="300"><div id="displayBphone">hello</div></td>
+            <td width="" height="300"><div id="displayVsmart">hello</div></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td id="inputBphone" width="200" height="70"><input><div></div></td>
+            <td id="inputVsmart" width="200" height="70"><input><div></div></td>
+        </tr>
+        <tr>
+            <td>
+                <button type="button" onclick="callBphone()" id="callBphone">call</button>
+                <button onclick="messageBphone()" id="messageBphone">message</button>
+                <button onclick="chargeBphone()" id="chargeBphone">sạc Pin</button>
+                <button onclick="resetBphone()" id="resetBphone">Reset</button>
+            </td>
+            <td>
+                <button onclick="callVsmart" id="callVsmart">call</button>
+                <button onclick="messageVsmart" id="messageVsmart">message</button>
+                <button onclick="chargeVsmart()" id="chargeVsmart">sạc Pin</button>
+                <button onclick="resetVsmart()" id="resetVsmart">Reset</button>
+            </td>
+        </tr>
+
+    </table>
+    <script>
+        let Mobile =  function (name, numberphone, sttatus, batery, inputphone) {
+            this.Name = name;
+            this.Number = numberphone;
+            this.Message = " ";
+            this.RecordMessage1 = [];
+            this.Stattus = sttatus;
+            this.Batery = batery;
+            this.inputPhone = inputphone;
+
+                this.setMessage = function () {
+                    this.Message = message;
+                    this.RecordMessage1.push(this.Message);
+                }
+
+                this.getMessage = function () {
+                    return this.Message
+                }
+
+                this.setNumber = function () {
+                    this.Number = numberphone;
+                }
+
+                this.getNumer = function () {
+                    return this.Number;
+                }
+
+                this.callPhone = function () {
+                    return this.Name + "<br> đang gọi cho bạn";
+                }
+        }
+        // if(document.getElementById("inputBphone").value === Vsmart.getNumer()) {
+            function callBphone() {
+                document.getElementById("displayVsmart").innerHTML = Bphone.callPhone()
+            }
+
+        console.log()
+
+        let nameBphone = "bphone";
+        let statusBphone = document.getElementById("stattusBphone").value;
+        let numberBphone = 99999999;
+        let bateryBphone = 100;
+        let inputphoneBphone = document.getElementById("inputBphone").value;
+
+        let Bphone = new Mobile(nameBphone, numberBphone,statusBphone,bateryBphone,inputphoneBphone);
+
+        let nameVsmart = "vsmart";
+        let statusVsmart = document.getElementById("stattusVsmart").value;
+        let numberVsmart = 988888888;
+        let bateryVsmart = 100;
+        let inputphoneVsmart = document.getElementById("inputVsmart").value;
+
+        let Vsmart = new Mobile(nameVsmart, numberVsmart, statusVsmart, bateryVsmart, inputphoneVsmart);
+
+
+
+
+
+    </script>
 </body>
 </html>

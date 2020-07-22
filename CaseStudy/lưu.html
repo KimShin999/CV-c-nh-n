@@ -2,9 +2,59 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+// this.h = h; //cao độ đứng ném vật so với h = 0
+
+this.hmax = function () //chiều cao cực đại khi ném vật
+{
+this.hmaxx = (this.v * this.v * Math.sin(this.alpha) * Math.sin(this.alpha) / 2 * 9.81);
+return this.hmaxx;
+}
+
+this.quaydau = function () {
+let a = (1920 - this.hmax())
+return a;
+}
+
+// this.t_hmax = function () //thời gian vật đạt độ cao cực đại
+// {
+//     this.t1 = this.v*Math.sin(this.alpha)/9.81;
+//     return this.t1;
+// }
+//
+// this.t_hmin = function () //thời gian vật từ độ cao max chạm đất
+// {
+//     this.t2 = Math.sqrt(2*(this.hmax()+this.h)/9.81)
+// //     return this.t2;
+// }
+
+// this.t = function ()    //thời gian kể từ lúc ném
+// {
+//     return this.count;
+//    // this.tt=this.t_hmin()+this.t_hmax() ;
+//    // return this.tt;
+// }
+
+this.count = 0;
+this.phuongtrinhX = function ()  //phương trình chuyển động ném xiên theo phương x, hoặc L
+{
+this.ptx = (this.v * Math.cos(this.alpha) * this.count) - this.ptx;
+return this.ptx;
+}
+
+this.yUp = function ()  //phương trình y đi lên(khi ném từ dưới đất lên)
+{
+this.yupp = (this.v * Math.sin(this.alpha) * this.count - 9.81 * this.count * this.count / 2) - this.yupp;
+return this.yupp;
+}
+
+this.yDown = function ()  //phuong trình y đi xuống
+{
+this.yDownn = (this.count * this.count * 9.81 / 2) - this.yDownn;
+return this.yDownn;
+}
+}
 </body>
 </html>

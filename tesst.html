@@ -2,9 +2,90 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
+    <script src="Tung.js"></script>
 </head>
-<body>
-$END$
+<body onload="StartGame()">
+<table>
+    <tr>
+        <td rowspan="2"><canvas id="myCanvas" width="800" height="585" style="border:1px solid #d3d3d3;">
+        </canvas></td>
+        <td><input type="text" disabled id="score" ></td>
+        <td><input type="text" disabled id="mang" style="float: left"></td>
+    </tr>
+    <tr>
+        <td colspan="2"><img src="bo1.jpg" style="width: 400px;height: 500px; float: left" id="image"></td>
+    </tr>
+</table>
+<script>
+    var score = 0;
+    var mang = 10;
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    let chaibia = [];
+    let count = 0;
+    var thungbia;
+    window.addEventListener("mousemove", moveMouse)
+    let ThungBia = function (x,y) {
+        this.x = x;
+        this.y = y;
+        this.image = new Image();
+        this.image.src = "thungbia.jpg";
+        this.creatThungBia = function () {
+            ctx.drawImage(this.image,this.x,this.y,200,150);
+        }
+        this.checkDiem =function (biabia) {
+            if ((biabia.x > this.x && biabia.x+100 <this.x+200)
+                && (biabia.y+100>this.y && biabia.y<this.y+150) ){
+                biabia.y += 800;
+                biabia.isExist = false;
+                score++;
+            }
+            if (biabia.y > c.height && biabia.isExist && !biabia.countAlready) {
+                mang--;
+                biabia.countAlready = true;
+            }
+        }
+    };
+    let ChaiBia = function (x,y) {
+        this.x = x;
+        this.y = y;
+        this.dy = 10;
+        this.isExist = true;
+        this.countAlready = false;
+        this.image = new Image();
+        this.image.src = "chaibia.jpg";
+        this.creatChaiBia = function () {
+            this.y += this.dy;
+            ctx.drawImage(this.image, this.x, this.y, 100, 100);
+        }
+    };
+    function StartGame(){
+        let randomX = Math.floor(Math.random() * (700)) + 1;
+        chaibia[count] = new ChaiBia(randomX,-100);
+        thungbia = new ThungBia(300,420);
+        setInterval(drawALL,30);
+        setInterval(creatNewChaiBia,300);
+    };
+    function drawALL() {
+        ctx.clearRect(0, 0, 800, 585);
+        for (let i = 0; i <chaibia.length ; i++) {
+            chaibia[i].creatChaiBia();
+            thungbia.checkDiem(chaibia[i]);
+        }
+        thungbia.creatThungBia();
+        document.getElementById('score').value ="Score: "+ score;
+        document.getElementById('mang').value ="Mạng: "+ mang;
+    };
+    function creatNewChaiBia() {
+        count++;
+        let randomX = Math.floor(Math.random() * (700)) + 1;
+        chaibia[count] = new ChaiBia(randomX,-100);
+    };
+    function moveMouse(evt) {
+        let canvas_x = evt.pageX -9;
+        thungbia.x = canvas_x - 100;
+    };
+</script>
 </body>
 </html>
