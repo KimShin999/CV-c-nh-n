@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <canvas id = "mygunny" style="border: 2px solid #d3d3d3" ></canvas>
+    <script>
+        let paincanvas = document.getElementById("mygunny");
+        let ctx = paincanvas.getContext("2d");
+        paincanvas.width = window.innerWidth;
+        paincanvas.height = window.innerHeight;
+
+
+        let bullet = function (x ,y, R, alpha, velocity) {
+            this.x = x;
+            this.y = y;
+            this.R = R;
+            this.alpha = alpha;
+            this.velocity = velocity; //lực bắn
+            this.Vx = this.velocity*Math.cos(this.alpha);
+            this.Vy = - this.velocity*Math.sin(this.alpha);
+
+            this.creatBullet = function () {
+                ctx.clearRect(0, 0, innerWidth, innerHeight);
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.R, 0, 2 * Math.PI);
+                ctx.stroke();
+                ctx.fill();
+                ctx.closePath();
+            }
+
+            this.position = function () {
+                this.x += this.Vx
+                this.y += this.Vy;
+                this.Vy += 1
+            }
+
+            this.move = function () {
+                this.position();
+                this.creatBullet();
+            }
+        }
+
+        let bullet1 = new bullet(100,1000,20,20,40)
+
+        function update() {
+        bullet1.move()
+        }
+        setInterval(update,35);
+
+    </script>
+</body>
+</html>
